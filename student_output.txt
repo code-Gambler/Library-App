@@ -1,0 +1,181 @@
+Script started on Mon 08 Aug 2022 11:46:36 PM EDT
+==97901== Memcheck, a memory error detector
+==97901== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==97901== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==97901== Command: ms
+==97901== 
+Loading Data
+Seneca Library Application
+ 1- Add New Publication
+ 2- Remove Publication
+ 3- Checkout publication from library
+ 4- Return publication to library
+ 0- Exit
+> 2
+Removing publication from the library
+Choose the type of publication:
+ 1- Book
+ 2- Publication
+ 0- Exit
+> 2
+Publication Title: 
+Select one of the following found matches:
+ Row  |LocID | Title                          |Mem ID | Date       | Author          |
+------+------+--------------------------------+-------+------------+-----------------|
+   1- | P008 | Canadian Cycling Magazine..... | 40289 | 2021/11/11 |
+   2- | P008 | Canadian Cycling Magazine..... | 21655 | 2021/11/12 |
+   3- | P008 | Canadian Cycling Magazine..... | 64198 | 2021/11/12 |
+   4- | P008 | Canadian Cycling Magazine..... | 53448 | 2021/11/16 |
+   5- | P008 | Canadian Cycling Magazine..... | 59523 | 2021/11/17 |
+   6- | P008 | Canadian Cycling Magazine..... |  N/A  | 2021/11/17 |
+   7- | P008 | Canadian Cycling Magazine..... |  N/A  | 2021/11/20 |
+   8- | P008 | Canadian Running Magazine..... |  N/A  | 2021/11/15 |
+   9- | P008 | Canadian Running Magazine..... |  N/A  | 2021/11/18 |
+  10- | P008 | Canadian Running Magazine..... | 46886 | 2021/11/18 |
+  11- | P008 | Canadian Running Magazine..... | 86255 | 2021/11/22 |
+  12- | P008 | Canadian Running Magazine..... |  N/A  | 2021/11/23 |
+  13- | P008 | Canadian Running Magazine..... | 77051 | 2021/11/25 |
+  14- | P004 | Hello! Canada Magazine........ | 89606 | 2021/11/11 |
+  15- | P006 | Hello! Canada Magazine........ | 63664 | 2021/11/12 |
+> N (Next page)
+> X (to Exit)
+> Row Number(select publication)
+> ^C==97901== 
+==97901== Process terminating with default action of signal 2 (SIGINT)
+==97901==    at 0x580DB40: __read_nocancel (in /usr/lib64/libc-2.17.so)
+==97901==    by 0x5799D53: _IO_file_underflow@@GLIBC_2.2.5 (in /usr/lib64/libc-2.17.so)
+==97901==    by 0x579AF21: _IO_default_uflow (in /usr/lib64/libc-2.17.so)
+==97901==    by 0x579578D: getc (in /usr/lib64/libc-2.17.so)
+==97901==    by 0x4F3388C: syncgetc (stdio_sync_filebuf.h:225)
+==97901==    by 0x4F3388C: __gnu_cxx::stdio_sync_filebuf<char, std::char_traits<char> >::underflow() (stdio_sync_filebuf.h:133)
+==97901==    by 0x4F42135: sgetc (streambuf:351)
+==97901==    by 0x4F42135: sgetc (streambuf:345)
+==97901==    by 0x4F42135: std::istream::peek() (istream.tcc:638)
+==97901==    by 0x405BD4: sdds::PublicationSelector::getSelectedLibRef() const (PublicationSelector.cpp:57)
+==97901==    by 0x406077: sdds::PublicationSelector::run() (PublicationSelector.cpp:134)
+==97901==    by 0x404533: sdds::LibApp::search(int) (LibApp.cpp:134)
+==97901==    by 0x404B43: sdds::LibApp::removePublication() (LibApp.cpp:229)
+==97901==    by 0x404D6F: sdds::LibApp::run() (LibApp.cpp:284)
+==97901==    by 0x40507F: runLibApp(char const*) (LibAppMain_prof.cpp:17)
+==97901== 
+==97901== HEAP SUMMARY:
+==97901==     in use at exit: 31,462 bytes in 892 blocks
+==97901==   total heap usage: 910 allocs, 18 frees, 118,310 bytes allocated
+==97901== 
+==97901== 5 bytes in 1 blocks are still reachable in loss record 1 of 14
+==97901==    at 0x4C2AC38: operator new[](unsigned long) (vg_replace_malloc.c:433)
+==97901==    by 0x405813: sdds::Menu::operator<<(char const*) (Menu.cpp:158)
+==97901==    by 0x403D7E: sdds::LibApp::LibApp(char const*) (LibApp.cpp:37)
+==97901==    by 0x405070: runLibApp(char const*) (LibAppMain_prof.cpp:16)
+==97901==    by 0x405194: main (LibAppMain_prof.cpp:28)
+==97901== 
+==97901== 12 bytes in 1 blocks are still reachable in loss record 2 of 14
+==97901==    at 0x4C2AC38: operator new[](unsigned long) (vg_replace_malloc.c:433)
+==97901==    by 0x405813: sdds::Menu::operator<<(char const*) (Menu.cpp:158)
+==97901==    by 0x403D8B: sdds::LibApp::LibApp(char const*) (LibApp.cpp:37)
+==97901==    by 0x405070: runLibApp(char const*) (LibAppMain_prof.cpp:16)
+==97901==    by 0x405194: main (LibAppMain_prof.cpp:28)
+==97901== 
+==97901== 19 bytes in 1 blocks are still reachable in loss record 3 of 14
+==97901==    at 0x4C2AC38: operator new[](unsigned long) (vg_replace_malloc.c:433)
+==97901==    by 0x405813: sdds::Menu::operator<<(char const*) (Menu.cpp:158)
+==97901==    by 0x403DAF: sdds::LibApp::LibApp(char const*) (LibApp.cpp:39)
+==97901==    by 0x405070: runLibApp(char const*) (LibAppMain_prof.cpp:16)
+==97901==    by 0x405194: main (LibAppMain_prof.cpp:28)
+==97901== 
+==97901== 20 bytes in 1 blocks are still reachable in loss record 4 of 14
+==97901==    at 0x4C2AC38: operator new[](unsigned long) (vg_replace_malloc.c:433)
+==97901==    by 0x405813: sdds::Menu::operator<<(char const*) (Menu.cpp:158)
+==97901==    by 0x403DA2: sdds::LibApp::LibApp(char const*) (LibApp.cpp:38)
+==97901==    by 0x405070: runLibApp(char const*) (LibAppMain_prof.cpp:16)
+==97901==    by 0x405194: main (LibAppMain_prof.cpp:28)
+==97901== 
+==97901== 22 bytes in 1 blocks are still reachable in loss record 5 of 14
+==97901==    at 0x4C2AC38: operator new[](unsigned long) (vg_replace_malloc.c:433)
+==97901==    by 0x405813: sdds::Menu::operator<<(char const*) (Menu.cpp:158)
+==97901==    by 0x403DE0: sdds::LibApp::LibApp(char const*) (LibApp.cpp:42)
+==97901==    by 0x405070: runLibApp(char const*) (LibAppMain_prof.cpp:16)
+==97901==    by 0x405194: main (LibAppMain_prof.cpp:28)
+==97901== 
+==97901== 30 bytes in 1 blocks are still reachable in loss record 6 of 14
+==97901==    at 0x4C2AC38: operator new[](unsigned long) (vg_replace_malloc.c:433)
+==97901==    by 0x405813: sdds::Menu::operator<<(char const*) (Menu.cpp:158)
+==97901==    by 0x403DC9: sdds::LibApp::LibApp(char const*) (LibApp.cpp:41)
+==97901==    by 0x405070: runLibApp(char const*) (LibAppMain_prof.cpp:16)
+==97901==    by 0x405194: main (LibAppMain_prof.cpp:28)
+==97901== 
+==97901== 34 bytes in 1 blocks are still reachable in loss record 7 of 14
+==97901==    at 0x4C2AC38: operator new[](unsigned long) (vg_replace_malloc.c:433)
+==97901==    by 0x405813: sdds::Menu::operator<<(char const*) (Menu.cpp:158)
+==97901==    by 0x403DBC: sdds::LibApp::LibApp(char const*) (LibApp.cpp:40)
+==97901==    by 0x405070: runLibApp(char const*) (LibAppMain_prof.cpp:16)
+==97901==    by 0x405194: main (LibAppMain_prof.cpp:28)
+==97901== 
+==97901== 36 bytes in 1 blocks are still reachable in loss record 8 of 14
+==97901==    at 0x4C2AC38: operator new[](unsigned long) (vg_replace_malloc.c:433)
+==97901==    by 0x405813: sdds::Menu::operator<<(char const*) (Menu.cpp:158)
+==97901==    by 0x403DED: sdds::LibApp::LibApp(char const*) (LibApp.cpp:43)
+==97901==    by 0x405070: runLibApp(char const*) (LibAppMain_prof.cpp:16)
+==97901==    by 0x405194: main (LibAppMain_prof.cpp:28)
+==97901== 
+==97901== 960 bytes in 1 blocks are still reachable in loss record 9 of 14
+==97901==    at 0x4C2AC38: operator new[](unsigned long) (vg_replace_malloc.c:433)
+==97901==    by 0x405F56: sdds::PublicationSelector::operator<<(sdds::Publication const*) (PublicationSelector.cpp:113)
+==97901==    by 0x4043D5: sdds::LibApp::search(int) (LibApp.cpp:116)
+==97901==    by 0x404B43: sdds::LibApp::removePublication() (LibApp.cpp:229)
+==97901==    by 0x404D6F: sdds::LibApp::run() (LibApp.cpp:284)
+==97901==    by 0x40507F: runLibApp(char const*) (LibAppMain_prof.cpp:17)
+==97901==    by 0x405194: main (LibAppMain_prof.cpp:28)
+==97901== 
+==97901== 2,113 bytes in 113 blocks are still reachable in loss record 10 of 14
+==97901==    at 0x4C2AC38: operator new[](unsigned long) (vg_replace_malloc.c:433)
+==97901==    by 0x4034FA: sdds::Publication::read(std::istream&) (Publication.cpp:132)
+==97901==    by 0x403A85: sdds::operator>>(std::istream&, sdds::Publication&) (Publication.cpp:250)
+==97901==    by 0x404028: sdds::LibApp::load(char const*) (LibApp.cpp:74)
+==97901==    by 0x403E00: sdds::LibApp::LibApp(char const*) (LibApp.cpp:44)
+==97901==    by 0x405070: runLibApp(char const*) (LibAppMain_prof.cpp:16)
+==97901==    by 0x405194: main (LibAppMain_prof.cpp:28)
+==97901== 
+==97901== 3,586 bytes in 219 blocks are still reachable in loss record 11 of 14
+==97901==    at 0x4C2AC38: operator new[](unsigned long) (vg_replace_malloc.c:433)
+==97901==    by 0x401FA4: sdds::Book::read(std::istream&) (Book.cpp:87)
+==97901==    by 0x403A85: sdds::operator>>(std::istream&, sdds::Publication&) (Publication.cpp:250)
+==97901==    by 0x404028: sdds::LibApp::load(char const*) (LibApp.cpp:74)
+==97901==    by 0x403E00: sdds::LibApp::LibApp(char const*) (LibApp.cpp:44)
+==97901==    by 0x405070: runLibApp(char const*) (LibAppMain_prof.cpp:16)
+==97901==    by 0x405194: main (LibAppMain_prof.cpp:28)
+==97901== 
+==97901== 4,281 bytes in 219 blocks are still reachable in loss record 12 of 14
+==97901==    at 0x4C2AC38: operator new[](unsigned long) (vg_replace_malloc.c:433)
+==97901==    by 0x4034FA: sdds::Publication::read(std::istream&) (Publication.cpp:132)
+==97901==    by 0x401E96: sdds::Book::read(std::istream&) (Book.cpp:75)
+==97901==    by 0x403A85: sdds::operator>>(std::istream&, sdds::Publication&) (Publication.cpp:250)
+==97901==    by 0x404028: sdds::LibApp::load(char const*) (LibApp.cpp:74)
+==97901==    by 0x403E00: sdds::LibApp::LibApp(char const*) (LibApp.cpp:44)
+==97901==    by 0x405070: runLibApp(char const*) (LibAppMain_prof.cpp:16)
+==97901==    by 0x405194: main (LibAppMain_prof.cpp:28)
+==97901== 
+==97901== 6,328 bytes in 113 blocks are still reachable in loss record 13 of 14
+==97901==    at 0x4C2A593: operator new(unsigned long) (vg_replace_malloc.c:344)
+==97901==    by 0x403F8C: sdds::LibApp::load(char const*) (LibApp.cpp:69)
+==97901==    by 0x403E00: sdds::LibApp::LibApp(char const*) (LibApp.cpp:44)
+==97901==    by 0x405070: runLibApp(char const*) (LibAppMain_prof.cpp:16)
+==97901==    by 0x405194: main (LibAppMain_prof.cpp:28)
+==97901== 
+==97901== 14,016 bytes in 219 blocks are still reachable in loss record 14 of 14
+==97901==    at 0x4C2A593: operator new(unsigned long) (vg_replace_malloc.c:344)
+==97901==    by 0x403FCB: sdds::LibApp::load(char const*) (LibApp.cpp:72)
+==97901==    by 0x403E00: sdds::LibApp::LibApp(char const*) (LibApp.cpp:44)
+==97901==    by 0x405070: runLibApp(char const*) (LibAppMain_prof.cpp:16)
+==97901==    by 0x405194: main (LibAppMain_prof.cpp:28)
+==97901== 
+==97901== LEAK SUMMARY:
+==97901==    definitely lost: 0 bytes in 0 blocks
+==97901==    indirectly lost: 0 bytes in 0 blocks
+==97901==      possibly lost: 0 bytes in 0 blocks
+==97901==    still reachable: 31,462 bytes in 892 blocks
+==97901==         suppressed: 0 bytes in 0 blocks
+==97901== 
+==97901== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+Script done on Mon 08 Aug 2022 11:53:09 PM EDT
